@@ -5,6 +5,7 @@ import {
   Navbar,
   Col,
   Row,
+  Image,
   Form,
   FormControl,
   Button,
@@ -20,8 +21,8 @@ const Header = props => {
       <Container>
         <Row>
           <Col xs={12} md={4}>
-            <img
-              src="https://cdn.24net.cz/1/obrazek/samsung-logo-98901/1920w"
+            <Image
+              src="https://metromode.se/files/2019/11/nakd.png"
               alt="Logotype"
             />
           </Col>

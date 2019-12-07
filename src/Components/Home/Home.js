@@ -18,7 +18,7 @@ const Home = (props) => {
         {id: 2, name: "Black eveningdress", href:"https://www.na-kd.com/siteassets/campaigns/2019/april/campaign-images/template_occasiondresses.jpg?ref=85D4A8E716&width=1550"}
       ]
        
-    let heroCollection = {id: 1, name: "leppard sweater", titel:"Reflections of deaths", link:"", description:"Adorable Caro's new collection is a true reflection of her style. I'ts feminine, figure-hugging and fresh. Just the way she likes it!", href:"https://www.na-kd.com/siteassets/campaigns/2019/november/pamela/desktop/pamela-reborn-desk-06-01.jpg?ref=35ED65F826&width=630&maxheight=1200"}
+    let heroCollection = {id: 1, name: "leppard sweater", titel:"Reflections of deaths", link:"", description:"Adorable Caro's new collection is a true reflection of her style. I'ts feminine, figure-hugging and fresh. Just the way she likes it!", href:"https://www.na-kd.com/siteassets/campaigns/2019/november/pamela/desktop/pamela-reborn-desk-06-01.jpg?ref=35ED65F826&width=2630&maxheight=1200"}
       
     return(
         <div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Col, Row, Button } from "react-bootstrap";
+import { Container, Col, Row, Button, Image } from "react-bootstrap";
 import "./Hero.css";
 
 const Hero = props => {
@@ -11,8 +11,8 @@ const Hero = props => {
           <p>{props.heroCollection.description}</p>
           <Button variant="info" className="mb-3"><a className="hero-a" href={props.heroCollection.link}>Buy Collection</a></Button>
         </Col>
-        <Col lg={6}>
-          <img fluid src={props.heroCollection.href} alt={props.heroCollection.name} />
+        <Col lg={7}>
+          <Image fluid src={props.heroCollection.href} alt={props.heroCollection.name} />
         </Col>
       </Row>
     </Container>
