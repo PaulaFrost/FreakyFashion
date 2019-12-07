@@ -1,0 +1,86 @@
+import React from "react";
+import {
+  Container,
+  Nav,
+  Navbar,
+  Col,
+  Row,
+  Form,
+  FormControl,
+  Button,
+  ButtonGroup,
+  Dropdown,
+} from "react-bootstrap";
+
+import "./Header.css"
+
+const Header = props => {
+  return (
+    <header>
+      <Container>
+        <Row>
+          <Col xs={12} md={4}>
+            <img
+              src="https://cdn.24net.cz/1/obrazek/samsung-logo-98901/1920w"
+              alt="Logotype"
+            />
+          </Col>
+          <Col xs={12} md={4} className="align-self-center justify-content-end">
+            <Form>
+              <FormControl
+                type="text"
+                placeholder="Search"
+                className="mr-sm2"
+                sm="2"
+                size="sm"
+              />
+            </Form>
+          </Col>
+          <Col md={1}></Col>
+          <Col md={3} className="align-self-center" expand="lg">
+            <Dropdown as={ButtonGroup}>
+              <Button variant="secondary" size="sm">
+                {/* Lägg till setState hooksen för att ändra på input */}
+                Svenska
+              </Button>
+
+              <Dropdown.Toggle
+                split
+                size="sm"
+                variant="secondary"
+                id="dropdown-split-basic"
+              />
+              <Dropdown.Menu>
+                {props.language.map(item => (
+                  <Dropdown.Item key={item.id}>{item.name}</Dropdown.Item>
+                ))}
+              </Dropdown.Menu>
+            </Dropdown>
+            {props.icon.map(item => (
+              <span key={item.id} className="icons">
+                <i key={item.id} className={item.href}></i>
+              </span> 
+            ))}
+          </Col>
+        </Row>
+        {/* Gör denna till en egen component?? */}
+        <Row>
+          <Navbar expand="lg">
+            <Navbar.Toggle area-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="mr-auto">
+                {props.menuItem.map(item => (
+                  <Nav.Link key={item.id} href={item.url}>
+                    {item.name}
+                  </Nav.Link>
+                ))}
+              </Nav>
+            </Navbar.Collapse>
+          </Navbar>
+        </Row>
+      </Container>
+    </header>
+  );
+};
+
+export default Header;

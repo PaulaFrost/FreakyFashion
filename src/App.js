@@ -1,12 +1,15 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import { Route } from 'react-router';
+import { Layout } from './Components/Layout';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import  Home  from './Components/Home/Home'
 
-function App() {
+const App = (props) => {
   return (
-    <div className="App">
-     Baajs
-    </div>
+    <Layout>
+      <Route exact path='/' component={Home} />
+      <Route />
+    </Layout>
   );
 }
 
