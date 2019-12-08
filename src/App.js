@@ -9,7 +9,7 @@ const App = (props) => {
   return (
     <Layout>
       <Route exact path='/' component={Home} />
-      <Route exact path='/product/' component={ProductPage}/>
+      <Route exact path='/products/:id' component={ProductPage}/>
     </Layout>
   );
 }

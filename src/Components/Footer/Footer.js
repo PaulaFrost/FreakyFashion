@@ -15,7 +15,7 @@ const Footer = props => {
       <Container>
         <Row className="mt-5">
           {props.footerIcon.map(item => (
-            <Col xs={12} lg={3} key={item.id}>
+            <Col xs={12} md={3} key={item.id}>
               <i key={item.id} className={item.href}>
                 {" "}
                 {item.titel}
@@ -24,7 +24,7 @@ const Footer = props => {
           ))}
         </Row>
         <Row className="mt-5">
-          <Col xs={12} lg={3}>
+          <Col xs={12} md={3}>
             <h6 className="fa">Shopping</h6>
             {props.shoppingList.map(item => (
               <div key={item.id}>
@@ -32,7 +32,7 @@ const Footer = props => {
               </div>
             ))}
           </Col>
-          <Col xs={12} lg={3}>
+          <Col xs={12} md={3}>
             <h6 className="fa">Mina Sidor</h6>
             {props.myPageList.map(item => (
               <div key={item.id}>
@@ -40,7 +40,7 @@ const Footer = props => {
               </div>
             ))}
           </Col>
-          <Col xs={12} lg={2}>
+          <Col xs={12} md={2}>
             <h6 className="fa">Kundtjänst</h6>
             {props.supportList.map(item => (
               <div key={item.id}>
@@ -48,8 +48,8 @@ const Footer = props => {
               </div>
             ))}
           </Col>
-          <Col lg={2}></Col>
-          <Col xs={12} lg={2}>
+          <Col md={2}></Col>
+          <Col xs={12} md={2}>
             <h6 className="fa">Välj land och språk</h6>
             <Row>
               <label>
