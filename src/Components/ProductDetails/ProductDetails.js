@@ -19,10 +19,7 @@ const ProductDetails = (props) => {
     let [productColor, setProductColor] = useState("");
     let [productSize, setProductSize] = useState("M");
 
-    const addToCart = (product) => {
-        // setProductName(product.name);
-        // setProductArtNr(product.artNr);
-        // setProductPrice(product.price);
+    let addToCart = () => {
 
         const addedProduct = {
             productName,
@@ -50,56 +47,38 @@ const ProductDetails = (props) => {
                         <label>
                             Välj färg
                             <Form>
-                                {['radio'].map(type => (
-                                    <div key={`inline-${type}`} className="mb-3">
-                                        {props.product.colors.map(color => (
-                                            <Form.Check 
-                                            key={color.id} 
-                                            inline label={color.name} 
-                                            type={type} 
-                                            id={`inline-${type}-${color.id}`} 
-                                            value={color.name}
-                                            onChange={event => setProductColor(event.target.value)}
-                                            />
-                                        ))}
-                                    </div>
+                            <fieldset>
+                            <Form.Group>
+                                {props.product.colors.map(color => (
+                                    <Form.Check 
+                                    key={color.id} 
+                                    inline label={color.name} 
+                                    type="radio" 
+                                    name="formHorizontalRadios"
+                                    value={color.name}
+                                    onChange={event => setProductColor(event.target.value)}
+                                    />
                                 ))}
-                            </Form>   
+                            </Form.Group> 
+                            </fieldset>
+                            </Form>
                         </label>
                     </div>
                     <div>
                         <label>
                             Välj storlek
-                            <div>
-                                <Dropdown as={ButtonGroup}>
-                                    <Button variant="secondary" size="sm">
-                                    {/* Lägg till setState hooksen för att ändra på input */}
-                                     {productSize}
-                                    </Button>
-                                    <Dropdown.Toggle
-                                    split
-                                    size="sm"
-                                    variant="secondary"
-                                    id="dropdown-split-basic"
-                                    />
-                                    <Dropdown.Menu>
-                                        {/* Får inte fram size */}
+                            <select
+                                className="ml-3"
+                                value={productSize}
+                                onChange={event => setProductSize(event.target.value)}>
                                     {props.product.sizes.map(size => (
-                                        <Dropdown.Item 
-                                        key={size.id} 
-                                        value={size.name}
-                                        onChange={event => setProductSize(event.target.value)}
-                                        >{size.name}</Dropdown.Item>
+                                        <option key={size.id} value={size.name}>{size.name}</option>
                                     ))}
-                                    </Dropdown.Menu>
-                                </Dropdown> 
-                            </div>      
+                            </select>
                         </label>
                     </div>
-                    <Button 
-                        onClick={addToCart()}
-                        >Köp</Button>
-                    <Button>Spara</Button>
+                    <Button onClick={addToCart} className="mt-3 mr-3">Köp</Button>
+                    <Button className="mt-3 mr-3">Spara</Button>
                 </Col>
              </Row>
         </Container>

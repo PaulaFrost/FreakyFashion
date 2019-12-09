@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Nav,
@@ -16,6 +16,9 @@ import {
 import "./Header.css"
 
 const Header = props => {
+
+  let [language, setLanguage] = useState("");
+
   return (
     <header>
       <Container>
@@ -39,24 +42,15 @@ const Header = props => {
           </Col>
           <Col md={1}></Col>
           <Col md={3} className="align-self-center" expand="lg">
-            <Dropdown as={ButtonGroup}>
-              <Button variant="secondary" size="sm">
-                {/* Lägg till setState hooksen för att ändra på input */}
-                Svenska
-              </Button>
-
-              <Dropdown.Toggle
-                split
-                size="sm"
-                variant="secondary"
-                id="dropdown-split-basic"
-              />
-              <Dropdown.Menu>
-                {props.language.map(item => (
-                  <Dropdown.Item key={item.id}>{item.name}</Dropdown.Item>
+            <label>
+              <select
+                value={language}
+                onChange={event => setLanguage(event.target.value)}>
+                {props.language.map(language => (
+                <option key={language.id} value={language.name}>{language.name}</option>
                 ))}
-              </Dropdown.Menu>
-            </Dropdown>
+              </select>
+            </label>
             {props.icon.map(item => (
               <span key={item.id} className="icons">
                 <i key={item.id} className={item.href}></i>
@@ -64,7 +58,6 @@ const Header = props => {
             ))}
           </Col>
         </Row>
-        {/* Gör denna till en egen component?? */}
         <Row>
           <Navbar expand="lg">
             <Navbar.Toggle area-controls="basic-navbar-nav" />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Col,
@@ -10,6 +10,10 @@ import {
 import "./Footer.css";
 
 const Footer = props => {
+
+  let [language, setLanguage] = useState("");
+  let [country, setCountry] = useState("");
+
   return (
     <footer>
       <Container>
@@ -52,50 +56,30 @@ const Footer = props => {
           <Col xs={12} md={2}>
             <h6 className="fa">Välj land och språk</h6>
             <Row>
-              <label>
+            <label>
                 Land
                 <div>
-                  <Dropdown as={ButtonGroup}>
-                    <Button variant="secondary" size="sm">
-                      {/* Lägg till setState hooksen för att ändra på input */}
-                      Sverige
-                    </Button>
-                    <Dropdown.Toggle
-                      split
-                      size="sm"
-                      variant="secondary"
-                      id="dropdown-split-basic"
-                    />
-                    <Dropdown.Menu>
-                      {props.countryList.map(item => (
-                        <Dropdown.Item key={item.id}>{item.name}</Dropdown.Item>
-                      ))}
-                    </Dropdown.Menu>
-                  </Dropdown>
+                <select
+                  value={country}
+                  onChange={event => setCountry(event.target.value)}>
+                  {props.countryList.map(country => (
+                  <option key={country.id} value={country.name}>{country.name}</option>
+                  ))}
+                </select>
                 </div>
               </label>
             </Row>
             <Row>
               <label>
-                Språk
-                <div>
-                  <Dropdown as={ButtonGroup}>
-                    <Button variant="secondary" size="sm">
-                      {/* Lägg till setState hooksen för att ändra på input */}
-                      Svenska
-                    </Button>
-                    <Dropdown.Toggle
-                      split
-                      size="sm"
-                      variant="secondary"
-                      id="dropdown-split-basic"
-                    />
-                    <Dropdown.Menu>
-                      {props.languageList.map(item => (
-                        <Dropdown.Item key={item.id}>{item.name}</Dropdown.Item>
-                      ))}
-                    </Dropdown.Menu>
-                  </Dropdown>
+                  Språk
+                  <div>
+                <select
+                  value={language}
+                  onChange={event => setLanguage(event.target.value)}>
+                  {props.languageList.map(language => (
+                  <option key={language.id} value={language.name}>{language.name}</option>
+                  ))}
+                </select>
                 </div>
               </label>
             </Row>
