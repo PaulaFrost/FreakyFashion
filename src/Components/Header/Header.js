@@ -7,10 +7,7 @@ import {
   Row,
   Image,
   Form,
-  FormControl,
-  Button,
-  ButtonGroup,
-  Dropdown,
+  FormControl
 } from "react-bootstrap";
 
 import "./Header.css"

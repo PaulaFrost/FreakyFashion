@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import {
   Container,
   Col,
-  Row,
-  Button,
-  ButtonGroup,
-  Dropdown
+  Row
 } from "react-bootstrap";
 import "./Footer.css";
 

@@ -6,9 +6,7 @@ import {
     Row,
     Image,
     Button,
-    ButtonGroup,
-    Form,
-    Dropdown
+    Form
   } from "react-bootstrap";
 
 const ProductDetails = (props) => {
