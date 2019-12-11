@@ -3,7 +3,7 @@ import ProductDetails from "../ProductDetails/ProductDetails";
 import RecommendedProducts from "../RecommendedProducts/RecommendedProducts"
 import "font-awesome/css/font-awesome.min.css";
 
-const ProductPage = (props) => {
+const ProductPage = () => {
 
     let product =
         {

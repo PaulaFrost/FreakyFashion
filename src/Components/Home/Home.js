@@ -5,7 +5,7 @@ import LargeSpots from "../LargeSpots/LargeSpots";
 import "font-awesome/css/font-awesome.min.css";
 import "./Home.css"
 
-const Home = (props) => {
+const Home = () => {
 
     let spotImageList = [
         {id: 1, name: "leppard sweater", href:"https://www.na-kd.com/globalassets/nakd_leo_knitted_sweater_1018-001855-0810_01a_r1.jpg?ref=FD207E4C58&width=640"},

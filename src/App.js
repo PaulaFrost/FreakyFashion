@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import  Home  from './Components/Home/Home';
 import ProductPage from './Components/ProductPage/ProductPage'
 
-const App = (props) => {
+const App = () => {
   return (
     <Layout>
       <Route exact path='/' component={Home} />
